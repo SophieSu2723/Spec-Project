@@ -1,0 +1,15 @@
+你将阅读一段群聊。每一行是一条对话条目，格式为：
+<条目编号> <参与者>: <文本>
+如果一行末尾有 [reply m-XX]，表示这条是对 m-XX 的回复。
+
+目标请求：{target_id}
+评估时刻：{eval_time}
+
+群聊：
+{conversation}
+
+问题：截至评估时刻，目标请求处于什么状态？
+只能从以下标签中选一个：open, canceled, fulfilled, full。
+
+不要解释。只回复一行，严格按照以下格式：
+STATUS: <label>

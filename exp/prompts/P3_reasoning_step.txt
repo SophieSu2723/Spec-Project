@@ -1,0 +1,17 @@
+You will read a group chat. Each line is one dialogue entry, written as:
+<entry ID> <actor>: <text>
+If a line ends with [reply m-XX], that entry replies to entry m-XX.
+
+Target request: {target_id}
+Evaluation time: {eval_time}
+
+Group chat:
+{conversation}
+
+Question: At the evaluation time, what is the status of the target request?
+Choose exactly one label: open, canceled, fulfilled, full.
+
+First, list the entry IDs that belong to the target request's thread (entries that reply to it, directly or through other replies). Then name the last entry in that thread written by the person who wrote the target request. Then give your answer.
+
+End your reply with one line in exactly this format:
+STATUS: <label>

@@ -1,0 +1,52 @@
+You will read a group chat. Each line is one dialogue entry, written as:
+<entry ID> <actor>: <text>
+If a line ends with [reply m-XX], that entry replies to entry m-XX.
+
+Here are four solved examples.
+
+Example 1
+Target request: m-02
+m-01  kate: Does anyone know which room this week's lecture is in?
+m-02  ryan: Thursday night, can anyone lend me an umbrella?
+m-03  lily: I have one at home, but I won't be back until Friday.   [reply m-02]
+m-04  kate: OK, I'll ask the TA.
+STATUS: open
+
+Example 2
+Target request: m-02
+m-01  kate: Is the laundry machine fixed yet?
+m-02  ryan: Anyone want to share a table at the hotpot place by West Gate on Saturday night? I'll book it.
+m-03  lily: I can come.   [reply m-02]
+m-04  ryan: The place is booked out that night, so Saturday's table share is off.   [reply m-02]
+STATUS: canceled
+
+Example 3
+Target request: m-02
+m-01  kate: Are midterm grades out yet?
+m-02  ryan: Looking for a used copy of Intro to Statistics. Anyone selling one?
+m-03  lily: I have one, you can have it for $20.   [reply m-02]
+m-04  ryan: Deal, I'll pick it up at the library entrance tomorrow at noon.   [reply m-03]
+STATUS: fulfilled
+
+Example 4
+Target request: m-02
+m-01  kate: Is the printer broken again?
+m-02  ryan: I booked a group study room for Sunday and can add two more people.
+m-03  lily: Count me in.   [reply m-02]
+m-04  tom: Me too.   [reply m-02]
+m-05  ryan: Both spots are taken, the study room is full.   [reply m-02]
+STATUS: full
+
+Now solve this one.
+
+Target request: {target_id}
+Evaluation time: {eval_time}
+
+Group chat:
+{conversation}
+
+Question: At the evaluation time, what is the status of the target request?
+Choose exactly one label: open, canceled, fulfilled, full.
+
+Do not explain. Reply with one line in exactly this format:
+STATUS: <label>

@@ -1,0 +1,21 @@
+You will read a group chat. Each line is one dialogue entry, written as:
+<entry ID> <actor>: <text>
+If a line ends with [reply m-XX], that entry replies to entry m-XX.
+
+Target request: {target_id}
+Evaluation time: {eval_time}
+
+Group chat:
+{conversation}
+
+Question: At the evaluation time, what is the status of the target request?
+Choose exactly one label: open, canceled, fulfilled, full.
+
+Label definitions (the "initiator" is the actor who wrote the target request):
+- open: the initiator has not closed the request. Replies from other people alone do not close it. A change to a different, unrelated plan does not count.
+- canceled: the initiator says the plan will not happen as proposed, or is no longer needed, without it having been secured.
+- fulfilled: the initiator confirms the goal is secured, e.g. a ride, companion or item is found, or a specific person's offer is accepted. It does not need to have physically happened yet.
+- full: the target request is an offer with a limited number of seats, items or spots, and the initiator confirms all of them are taken.
+
+Do not explain. Reply with one line in exactly this format:
+STATUS: <label>

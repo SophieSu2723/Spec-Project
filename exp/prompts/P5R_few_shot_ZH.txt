@@ -1,0 +1,52 @@
+You will read a group chat. Each line is one dialogue entry, written as:
+<entry ID> <actor>: <text>
+If a line ends with [reply m-XX], that entry replies to entry m-XX.
+
+Here are four solved examples.
+
+Example 1
+Target request: m-02
+m-01  kate: 打印机又坏了吗？
+m-02  ryan: 我订了周日的小组自习室，还能再加两个人。
+m-03  lily: 算我一个。   [reply m-02]
+m-04  tom: 我也来。   [reply m-02]
+m-05  ryan: 两个名额都有人了，自习室满了。   [reply m-02]
+STATUS: full
+
+Example 2
+Target request: m-02
+m-01  kate: 有人知道期中成绩出了吗？
+m-02  ryan: 求一本二手的《统计学导论》，有人要转让吗？
+m-03  lily: 我有一本，二十块给你。   [reply m-02]
+m-04  ryan: 可以，明天中午在图书馆门口拿。   [reply m-03]
+STATUS: fulfilled
+
+Example 3
+Target request: m-02
+m-01  kate: 洗衣房的机器修好了吗？
+m-02  ryan: 周六晚上有人想去西门那家火锅店拼桌吗？我来订位。
+m-03  lily: 我可以来。   [reply m-02]
+m-04  ryan: 店里那天包场了，周六的拼桌不去了。   [reply m-02]
+STATUS: canceled
+
+Example 4
+Target request: m-02
+m-01  kate: 有人知道这周的讲座在哪个教室吗？
+m-02  ryan: 周四晚上有人能借我一把伞吗？
+m-03  lily: 我家里有，不过要周五才回去。   [reply m-02]
+m-04  kate: 好的，我再问问助教。
+STATUS: open
+
+Now solve this one.
+
+Target request: {target_id}
+Evaluation time: {eval_time}
+
+Group chat:
+{conversation}
+
+Question: At the evaluation time, what is the status of the target request?
+Choose exactly one label: open, canceled, fulfilled, full.
+
+Do not explain. Reply with one line in exactly this format:
+STATUS: <label>
